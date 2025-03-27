@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libur Dulu, Bro!</title>
     <style>
+        @keyframes slideText {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
             text-align: center;
-            background-color: #fffae3;
+            background: url('https://i.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif') no-repeat center center fixed;
+            background-size: cover;
             color: #333;
             padding: 50px;
         }
@@ -22,6 +27,10 @@
         }
         h1 {
             font-size: 24px;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: slideText 5s linear infinite alternate;
         }
         p {
             font-size: 18px;
@@ -48,7 +57,7 @@
         <p>Balek maneh tanggal <strong>8 April</strong> yo!</p>
         <p>Oh yo, butuh opo-opo? <strong>WA ae!</strong> 📲</p>
         <a class="wa-button" href="https://wa.me/6281234567890" target="_blank">Chat di WhatsApp</a>
-        <p><em>Karo siji neh, Sugeng Riyadin kagem panjenengan sedoyo. Nyuwun pangapunten nggeh nek menawi kulo gadah salah. 🙏</em></p>
+        <p><em>Sugeng Riyadi kagem panjenengan sedaya. Nyuwun pangapunten lahir lan batin, mugi-mugi kita tansah pinaringan berkah lan kasuksesan. 🙏</em></p>
     </div>
 </body>
 </html>
