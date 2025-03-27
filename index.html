@@ -6,11 +6,11 @@
     <title>Libur Dulu, Bro!</title>
     <style>
         @keyframes moveAroundBorder {
-            0% { top: 10px; left: 10px; }
-            25% { top: 10px; right: 10px; left: auto; }
-            50% { bottom: 10px; right: 10px; top: auto; }
-            75% { bottom: 10px; left: 10px; right: auto; }
-            100% { top: 10px; left: 10px; bottom: auto; }
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(100vw, 0); }
+            50% { transform: translate(100vw, 100vh); }
+            75% { transform: translate(0, 100vh); }
+            100% { transform: translate(0, 0); }
         }
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -37,7 +37,8 @@
             font-size: 24px;
             font-weight: bold;
             color: red;
-            animation: moveAroundBorder 8s infinite linear;
+            white-space: nowrap;
+            animation: moveAroundBorder 10s linear infinite;
         }
         .wa-button {
             display: inline-block;
@@ -73,7 +74,7 @@
         <h1>🎉 Prei Sek Bolo! 🎉</h1>
         <p>Balek maneh tanggal <strong>8 April</strong> yo!</p>
         <p>Oh yo, butuh opo-opo? <strong>WA ae!</strong> 📲</p>
-        <a class="wa-button" href="https://wa.me/6281234567890" target="_blank">Chat di WhatsApp</a>
+        <a class="wa-button" href="https://wa.me/6281910765279" target="_blank">*Bales nek pas longgar nggeh 🙏</a>
         <p><em>Sugeng Riyadi kagem panjenengan sedaya. Nyuwun pangapunten lahir lan batin, mugi-mugi kita tansah pinaringan berkah lan kasuksesan. 🙏</em></p>
     </div>
     <script>
