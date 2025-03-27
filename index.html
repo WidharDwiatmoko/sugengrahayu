@@ -1,106 +1,153 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libur Dulu, Bro!</title>
     <style>
-        @keyframes moveAroundBorder {
-            0% { top: 0; left: 0; transform: rotate(0deg); }
-            25% { top: 0; left: 100vw; transform: rotate(0deg); }
-            50% { top: 100vh; left: 100vw; transform: rotate(90deg); }
-            75% { top: 100vh; left: 0; transform: rotate(90deg); }
-            100% { top: 0; left: 0; transform: rotate(180deg); }
+      @keyframes moveAroundBorder {
+        0% {
+          top: 0;
+          left: 0;
+          transform: rotate(0deg);
         }
+
+        25% {
+          top: 0;
+          left: 100vw;
+          transform: rotate(0deg);
+        }
+
+        50% {
+          top: 100vh;
+          left: 100vw;
+          transform: rotate(90deg);
+        }
+
+        75% {
+          top: 100vh;
+          left: 0;
+          transform: rotate(90deg);
+        }
+
+        100% {
+          top: 0;
+          left: 0;
+          transform: rotate(180deg);
+        }
+      }
+
+      body {
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        text-align: center;
+        background: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWh2aWI0NWVhZTY2M3ZraGtkZWcyOHJ4ZXU3MGpsdjB5aGN5d2N3eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT8qB2yixJY4ka7oYM/giphy.gif') no-repeat center center fixed;
+        background-size: cover;
+        color: #333;
+        padding: 50px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .container {
+        max-width: 600px;
+        width: 90%;
+        /* Supaya lebih fleksibel di mobile */
+        margin: 0 auto;
+        /* Biar tetap tengah */
+        background: rgba(255, 235, 153, 0.9);
+        /* Semi-transparent yellow for Lebaran feel */
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        z-index: 2;
+      }
+
+      .wa-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 18px;
+        color: white;
+        background-color: #25D366;
+        text-decoration: none;
+        border-radius: 50px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .wa-button:hover {
+        background-color: #1EBE57;
+      }
+
+      .confetti {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        background: red;
+        opacity: 0.7;
+        border-radius: 50%;
+        animation: fall linear infinite;
+      }
+
+      @keyframes fall {
+        from {
+          transform: translateY(-100vh) rotate(0deg);
+        }
+
+        to {
+          transform: translateY(100vh) rotate(360deg);
+        }
+      }
+
+      /* Media query for mobile responsiveness */
+      @media (max-width: 600px) {
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            text-align: center;
-            background: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWh2aWI0NWVhZTY2M3ZraGtkZWcyOHJ4ZXU3MGpsdjB5aGN5d2N3eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT8qB2yixJY4ka7oYM/giphy.gif') no-repeat center center fixed;
-            background-size: cover;
-            color: #333;
-            padding: 50px;
-            position: relative;
-            overflow: hidden;
+          padding: 20px;
         }
+
         .container {
-            max-width: 600px;
-            margin: auto;
-            background: rgba(255, 235, 153, 0.9); /* Semi-transparent yellow for Lebaran feel */
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-            position: relative;
-            z-index: 2;
+          width: 90%;
+          max-width: 90%;
+          padding: 15px;
         }
+
+        h1 {
+          font-size: 24px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+
         .wa-button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 18px;
-            color: white;
-            background-color: #25D366;
-            text-decoration: none;
-            border-radius: 50px;
-            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+          padding: 12px 18px;
+          font-size: 16px;
         }
-        .wa-button:hover {
-            background-color: #1EBE57;
-        }
-        .confetti {
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            background: red;
-            opacity: 0.7;
-            border-radius: 50%;
-            animation: fall linear infinite;
-        }
-        @keyframes fall {
-            from { transform: translateY(-100vh) rotate(0deg); }
-            to { transform: translateY(100vh) rotate(360deg); }
-        }
-        /* Media query for mobile responsiveness */
-        @media (max-width: 600px) {
-            body {
-                padding: 20px;
-            }
-            .container {
-                width: 100%;
-                padding: 15px;
-            }
-            h1 {
-                font-size: 24px;
-            }
-            p {
-                font-size: 16px;
-            }
-            .wa-button {
-                padding: 12px 18px;
-                font-size: 16px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1>🎉 Prei Sek Bolo! 🎉</h1>
-        <p>Balek maneh tanggal <strong>8 April</strong> yo!</p>
-        <p>Oh yo, nek butuh opo-opo soal gawean? <strong>WA wae!</strong> 📲</p>
-        <a class="wa-button" href="https://wa.me/6281910765279" target="_blank">Dibales pas longgar nggeh 🙏</a>
-        <p><em>Sugeng Riyadin kagem konco-konco sedaya. Nyuwun pangapunten lahir lan batin, mugi-mugi kita tansah pinaringan berkah lan kasuksesan. Amin</em>🙏</p>
+      <h1>🎉 Prei Sek Bolo! 🎉</h1>
+      <p>Balek maneh tanggal <strong>8 April</strong> yo! </p>
+      <p>Oh yo, nek butuh opo-opo soal gawean? <strong>WA wae!</strong> 📲 </p>
+      <a class="wa-button" href="https://wa.me/6281910765279" target="_blank">Dibales pas longgar nggeh 🙏</a>
+      <p>
+        <em>Sugeng Riyadin kagem konco-konco sedaya. Nyuwun pangapunten lahir lan batin, mugi-mugi kita tansah pinaringan berkah lan kasuksesan. Amin</em>🙏
+      </p>
     </div>
     <script>
-        function createConfetti() {
-            for (let i = 0; i < 50; i++) {
-                let confetti = document.createElement("div");
-                confetti.className = "confetti";
-                confetti.style.left = Math.random() * 100 + "vw";
-                confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
-                confetti.style.backgroundColor = ["red", "blue", "yellow", "green", "purple"][Math.floor(Math.random() * 5)];
-                document.body.appendChild(confetti);
-                setTimeout(() => confetti.remove(), 5000);
-            }
+      function createConfetti() {
+        for (let i = 0; i < 50; i++) {
+          let confetti = document.createElement("div");
+          confetti.className = "confetti";
+          confetti.style.left = Math.random() * 100 + "vw";
+          confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+          confetti.style.backgroundColor = ["red", "blue", "yellow", "green", "purple"][Math.floor(Math.random() * 5)];
+          document.body.appendChild(confetti);
+          setTimeout(() => confetti.remove(), 5000);
         }
-        setInterval(createConfetti, 1000);
+      }
+      setInterval(createConfetti, 1000);
     </script>
-</body>
+  </body>
 </html>
