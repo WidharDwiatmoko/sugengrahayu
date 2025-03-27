@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libur Dulu, Bro!</title>
     <style>
-        @keyframes slideText {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+        @keyframes moveAround {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(200px, 50px); }
+            50% { transform: translate(-100px, 150px); }
+            75% { transform: translate(100px, -50px); }
+            100% { transform: translate(0, 0); }
         }
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -16,6 +19,7 @@
             background-size: cover;
             color: #333;
             padding: 50px;
+            position: relative;
         }
         .container {
             max-width: 600px;
@@ -24,17 +28,15 @@
             padding: 20px;
             border-radius: 15px;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
         }
-        h1 {
+        .moving-text {
+            position: absolute;
             font-size: 24px;
-            display: inline-block;
-            white-space: nowrap;
-            overflow: hidden;
-            animation: slideText 5s linear infinite alternate;
-        }
-        p {
-            font-size: 18px;
-            margin-bottom: 20px;
+            font-weight: bold;
+            color: red;
+            animation: moveAround 5s infinite alternate ease-in-out;
         }
         .wa-button {
             display: inline-block;
@@ -52,6 +54,7 @@
     </style>
 </head>
 <body>
+    <div class="moving-text">🔥 LIBUR REK! 🔥</div>
     <div class="container">
         <h1>🎉 Prei Sek Bolo! 🎉</h1>
         <p>Balek maneh tanggal <strong>8 April</strong> yo!</p>
